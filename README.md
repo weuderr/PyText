@@ -16,8 +16,12 @@ Usage
 
   $ git clone http://github.com/shankarvalleru/PyText
 
-2. Update PyText/gmailAccount.cfg file with correct gmail credentials
-3. Send text/sms messages for free by running pyText script using following syntax
+2. If your gmail not use app password, you can active 
+
+	Suport link - https://support.google.com/accounts/answer/185833
+	
+3. Update PyText/gmailAccount.cfg file with correct gmail credentials
+4. Send text/sms messages for free by running pyText script using following syntax
 
   $ python pyText.py country='United States' carrier='AT&T Wireless' receiver='4088675309' text='Good Bye Cruel World!'
 

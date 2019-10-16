@@ -27,13 +27,14 @@ def get_sms_params(**params):
                     break
         else:
             raise ValueError('Country not found!')
-
+        carriers_valid = '';
         for v in gateways['sms_carriers'][isocode].values():
+            carriers_valid = carriers_valid + v[0] + '; '
             if v[0] == carrier:
                 gateway_addr = v[1]
                 break
         if gateway_addr is None:
-                raise ValueError('Carrier not found!')
+                raise ValueError("Carriers valid for your country: "+carriers_valid+"\n"+carrier+" is not a carrier valid!\n")
         return {'gateway_addr': gateway_addr, 'text_body': text, 'email': email, 'passwd': passwd, 'receiver': receiver}
     except ValueError, v:
         print v
